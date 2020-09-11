@@ -35,7 +35,7 @@
  ****************************************************************************/
 -->
 <launch>
-  <arg name="8074" default="true"/>
+  <arg name="8074" default="false"/>
 
   <group ns="downward">
     <node pkg="nodelet" type="nodelet" name="vio_nodelet_man" args="manager" output="screen"/>
@@ -44,12 +44,12 @@
     <node pkg="nodelet" type="nodelet" name="snap_cam_nodelet"
        args="load snap_cam_ros/driver vio_nodelet_man">
       <param name="camera_name" value="downward"/>
-      <param name="format" value="1"/>
+      <param name="format" value="0"/>
       <param name="camera_number" value="1"/>
       <param name="width" value="640"/>
       <param name="height" value="480"/>
       <param name="frame_id" value="dfc"/>
-      <param name="is_cam_master" value="true"/>
+      <param name="is_cam_master" value="false"/>
     </node>
 
     <param name="image_raw/compressed/jpeg_quality" value="50"/>
